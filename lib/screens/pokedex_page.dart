@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/services/poke_data.dart';
+import 'package:pokedex/components/poke_card_list.dart';
 
 class PokedexPage extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _PokedexPageState extends State<PokedexPage> {
 
   Future<List> getPokedexList() async {
     try {
-      pokeCardList = await PokeData().getPokeList();
+      pokeCardList = await PokeCardList().getPokeCardList();
     } catch (e) {
       print(e);
     }

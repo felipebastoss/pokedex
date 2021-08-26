@@ -102,27 +102,33 @@ class PokeCard extends StatelessWidget {
                       ? Container(
                           width: 0,
                         )
-                      : Padding(
-                          padding: const EdgeInsets.only(bottom: 40.0, top: 5),
-                          child: SizedBox(
-                            height: 40,
-                            width: 230,
-                            child: Card(
-                              color: Colors.white,
-                              child: Center(
-                                child: Text(
-                                  type2.toUpperCase(),
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
+                      : type2 == 'Unknown'
+                          ? Container(
+                              width: 0,
+                              height: 40,
+                            )
+                          : Padding(
+                              padding:
+                                  const EdgeInsets.only(bottom: 40.0, top: 5),
+                              child: SizedBox(
+                                height: 40,
+                                width: 230,
+                                child: Card(
+                                  color: Colors.white,
+                                  child: Center(
+                                    child: Text(
+                                      type2.toUpperCase(),
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 20),
+                                    ),
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15)),
+                                  ),
                                 ),
                               ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15)),
-                              ),
                             ),
-                          ),
-                        ),
             ],
           ),
         ),
